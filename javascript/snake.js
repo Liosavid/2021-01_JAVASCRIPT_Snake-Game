@@ -1,15 +1,16 @@
 // Code for the Snake
 
+import { getInputDirection } from "./input.js";
+
 export const SNAKE_SPEED = 2; // Snake moves two times per second.
 const snakeBody = [
 
-    { x: 10, y: 11 }, 
     { x: 11, y: 11 }, // Draw the snake in the middle of the screen to start
-    { x: 12, y: 11 } 
 
 ]; 
 
 export function update(){
+    const inputDirection = getInputDirection();
 
     // update tail od the snake
     for (let i = snakeBody.length - 2; i >= 0; i--){
@@ -17,8 +18,8 @@ export function update(){
     }
 
     // update head of the snake
-    snakeBody[0].x += 1;
-    snakeBody[0].y += 0;
+    snakeBody[0].x += inputDirection.x;
+    snakeBody[0].y += inputDirection.y;
 
 }
 
