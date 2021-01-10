@@ -2,7 +2,7 @@
 
 import { getInputDirection } from "./input.js";
 
-export const SNAKE_SPEED = 2; // Snake moves two times per second.
+export const SNAKE_SPEED = 5; // Snake moves XX times per second.
 const snakeBody = [
 
     { x: 11, y: 11 }, // Draw the snake in the middle of the screen to start
