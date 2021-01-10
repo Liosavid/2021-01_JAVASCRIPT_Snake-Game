@@ -1,5 +1,8 @@
+import { update as updateSnake, draw as drawSnake, SNAKE_SPEED } from './snake.js';
+
+
 let lastRenderTime = 0;
-const SNAKE_SPEED = 2; // Snake moves two times per second.
+const gameBoard = document.getElementById('game-board');
 
 function main(currentTime){
     window.requestAnimationFrame(main);
@@ -14,7 +17,18 @@ function main(currentTime){
     console.log("Render");
     lastRenderTime = currentTime;
 
+    // Update loop
+    update();
+    draw();
 }
 
 // Main function is going to loop over and over again:
 window.requestAnimationFrame(main);
+
+function update(){
+    updateSnake();
+}
+
+function draw(){
+    drawSnake(gameBoard);  
+}
